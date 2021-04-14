@@ -65,23 +65,18 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+            <div class="top-right links">
+                <a href="{{ url('/') }}">Home</a>
+            </div>
 
             <div class="content">
                 <div class="title m-b-md">
                     Slowbro
+                </div>
+
+                <div>
+                    <p><a href="{{ url('/article/1')}}">position详解</a></p>
+                    <p><a href="{{ url('/article/2')}}">php类加载机制</a></p>
                 </div>
 
 		<div class="links">
