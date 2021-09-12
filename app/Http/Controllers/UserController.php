@@ -11,10 +11,10 @@ class UserController extends Controller
 
     public function info(Request $request) {
         $id = random_int(1,100);
-        $user = User::find();
+        $user = User::where(['id' => $id])->get()->first();
         return [
-            "id" => $user->getKey(),
-            "open_id" => $user->open_id,
+            "id" => $user ? $user->getKey() : $id,
+            // "open_id" => $user->open_id,
         ];
 
     }
